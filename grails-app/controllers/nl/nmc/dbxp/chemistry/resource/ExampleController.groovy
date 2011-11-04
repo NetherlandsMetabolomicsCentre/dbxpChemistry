@@ -6,6 +6,8 @@ class ExampleController {
 	def ChemspiderService
 	def PubchemService
 	def LipidmapsService
+	def HmdbService
+	def KeggService
 	
     def index = { 
 		render ("Help!")			
@@ -114,6 +116,14 @@ class ExampleController {
 		
 		//returns MOL data of Lipid
 		render LipidmapsService.lipidmapsMOLDataByLMID('LMSP03010003')
+	}
+	
+	def hmdb = {
+		render HmdbService.hmdbUrlByHmdbId('HMDB00122')
+	}
+	
+	def kegg = {
+		render KeggService.keggUrlByKeggId('C00031')
 	}
 }
 
