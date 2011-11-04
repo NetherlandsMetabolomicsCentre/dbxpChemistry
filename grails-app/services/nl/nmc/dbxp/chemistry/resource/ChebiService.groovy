@@ -10,6 +10,10 @@ class ChebiService {
 
 	static transactional = true
 	
+	def chebiUrlByChebiId(String chebiId = '') {
+		return 'http://www.ebi.ac.uk/chebi/searchId.do?chebiId=' + chebiId
+	}
+	
 	def findAllChebiByLabel (String label = '', HashMap args = ['max':1, 'synonyms':false, 'ontologychildren':false, 'ontologyparents':false, 'ontologychildreninpath':false]){
 			
 		def result = [:] // ChebiID:ChebiASCIIName
