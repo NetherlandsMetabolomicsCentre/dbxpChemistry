@@ -8,6 +8,7 @@ class ExampleController {
 	def LipidmapsService
 	def HmdbService
 	def KeggService
+	def BridgeDbService
 	
     def index = { 
 		render ("Help!")			
@@ -124,6 +125,10 @@ class ExampleController {
 	
 	def kegg = {
 		render KeggService.keggUrlByKeggId('C00031')
+	}
+	
+	def bridgedb = {
+		render BridgeDbService.example()
 	}
 }
 

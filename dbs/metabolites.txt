@@ -1,0 +1,2 @@
+Pubchem	Chebi	Chemspider	Lipidmaps	HMDB	Kegg	CAS	Knapsack
+3333	4167	96749	null	HMDB00122	C00031	50-99-7	C00001122
