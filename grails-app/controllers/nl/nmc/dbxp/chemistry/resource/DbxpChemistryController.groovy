@@ -1,6 +1,6 @@
 package nl.nmc.dbxp.chemistry.resource
 
-class ExampleController {
+class DbxpChemistryController {
 
 	def ChebiService
 	def ChemspiderService
@@ -9,10 +9,6 @@ class ExampleController {
 	def HmdbService
 	def KeggService
 	def BridgeDbService
-	
-    def index = { 
-		render ("Help!")			
-	}
 	
 	def chebi = {
 		

@@ -1,6 +1,6 @@
 class DbxpChemistryGrailsPlugin {
     // the plugin version
-    def version = "0.0.6"
+    def version = "0.0.8"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.3.7 > *"
     // the other plugins this plugin depends on
@@ -13,10 +13,8 @@ class DbxpChemistryGrailsPlugin {
     // TODO Fill in these fields
     def author = "Michael van Vliet"
     def authorEmail = "m.s.vanvliet@lacdr.leidenuniv.nl"
-    def title = "Plugin for Bio/Chemo -informatics"
-    def description = '''\\
-Tools for Chemistry
-'''
+    def title = "Plugin for bio- or chemo-informatics"
+    def description = '''Tools for Chemistry'''
 
     // URL to the plugin's documentation
     def documentation = "http://grails.org/plugin/dbxp-chemistry"
