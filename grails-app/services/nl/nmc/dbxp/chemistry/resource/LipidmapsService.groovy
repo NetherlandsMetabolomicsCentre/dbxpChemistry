@@ -1,5 +1,7 @@
 package nl.nmc.dbxp.chemistry.resource
 
+import nl.nmc.dbxp.chemistry.ResourceService
+
 /**
  * A Grails Service to provide easy access to the LipidMaps Database
  *
@@ -7,9 +9,14 @@ package nl.nmc.dbxp.chemistry.resource
  * @author	Michael van Vliet
  * @email	m.s.vanvliet@lacdr.leidenuniv.nl
  */
-class LipidmapsService {
+class LipidmapsService extends ResourceService {
 
 	static transactional = true
+
+	/**
+	 * Defines class used in BridgeDB to be able to look for identical resource keys
+	 */
+	String bridgeDbClass = 'Lipidmaps'
 
 	/**
 	 * @param	LMID	LipidMaps Identifier (e.g. LMSP03010003)

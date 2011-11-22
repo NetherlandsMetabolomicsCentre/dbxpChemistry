@@ -1,23 +1,23 @@
-<plugin name='dbxp-chemistry' version='0.0.6' grailsVersion='1.3.7 &gt; *'>
+<plugin name='dbxp-chemistry' version='0.0.9' grailsVersion='1.3.7 &gt; *'>
   <author>Michael van Vliet</author>
   <authorEmail>m.s.vanvliet@lacdr.leidenuniv.nl</authorEmail>
-  <title>Plugin for Bio/Chemo -informatics</title>
-  <description>\
-Tools for Chemistry
-</description>
+  <title>Plugin for bio- or chemo-informatics</title>
+  <description>Tools for Chemistry</description>
   <documentation>http://grails.org/plugin/dbxp-chemistry</documentation>
   <resources>
     <resource>BuildConfig</resource>
     <resource>Config</resource>
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>
-    <resource>nl.nmc.dbxp.chemistry.resource.ApiController</resource>
     <resource>nl.nmc.dbxp.chemistry.resource.ExampleController</resource>
+    <resource>nl.nmc.dbxp.chemistry.ResourceService</resource>
     <resource>nl.nmc.dbxp.chemistry.db.mapper.BridgeDbService</resource>
+    <resource>nl.nmc.dbxp.chemistry.resource.CasService</resource>
     <resource>nl.nmc.dbxp.chemistry.resource.ChebiService</resource>
     <resource>nl.nmc.dbxp.chemistry.resource.ChemspiderService</resource>
     <resource>nl.nmc.dbxp.chemistry.resource.HmdbService</resource>
     <resource>nl.nmc.dbxp.chemistry.resource.KeggService</resource>
+    <resource>nl.nmc.dbxp.chemistry.resource.KnapsackService</resource>
     <resource>nl.nmc.dbxp.chemistry.resource.LipidmapsService</resource>
     <resource>nl.nmc.dbxp.chemistry.resource.PubchemService</resource>
   </resources>

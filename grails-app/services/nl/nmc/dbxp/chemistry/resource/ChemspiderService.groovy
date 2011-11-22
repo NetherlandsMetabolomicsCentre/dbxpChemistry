@@ -1,5 +1,7 @@
 package nl.nmc.dbxp.chemistry.resource
 
+import nl.nmc.dbxp.chemistry.ResourceService
+
 /**
  * A Grails Service to provide easy access to the Chemspider Database
  * 
@@ -7,9 +9,14 @@ package nl.nmc.dbxp.chemistry.resource
  * @author	Michael van Vliet
  * @email	m.s.vanvliet@lacdr.leidenuniv.nl
  */
-class ChemspiderService {
+class ChemspiderService extends ResourceService {
 
 	static transactional = true
+	
+	/**
+	* Defines class used in BridgeDB to be able to look for identical resource keys
+	*/
+   String bridgeDbClass = 'Chemspider'
 
 	/**
 	 * @param	inchi	InChI (e.g. InChI=1S/C27H30O16/c1-8-17(32)20(35)22(37)26(40-8)39-7-15-18(33)21(36)23(38)27(42-15)43-25-19(34)16-13(31)5-10(28)6-14(16)41-24(25)9-2-3-11(29)12(30)4-9/h2-6,8,15,17-18,20-23,26-33,35-38H,7H2,1H3/t8-,15+,17-,18+,20+,21-,22+,23+,26+,27-/m0/s1 )

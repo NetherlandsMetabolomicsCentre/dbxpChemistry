@@ -3,11 +3,9 @@
   <groupId>org.grails.plugins</groupId>
   <artifactId>dbxp-chemistry</artifactId>
   <packaging>zip</packaging>
-  <version>0.0.6</version>
-  <name>Plugin for Bio/Chemo -informatics</name>
-  <description>\
-Tools for Chemistry
-</description>
+  <version>0.0.9</version>
+  <name>Plugin for bio- or chemo-informatics</name>
+  <description>Tools for Chemistry</description>
   <url>http://grails.org/plugin/dbxp-chemistry</url>
   <developers>
     <developer>

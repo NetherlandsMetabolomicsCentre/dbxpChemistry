@@ -1,10 +1,13 @@
 package nl.nmc.dbxp.chemistry.resource
 
+import nl.nmc.dbxp.chemistry.ResourceService;
 import uk.ac.ebi.chebi.webapps.chebiWS.client.ChebiWebServiceClient
 import uk.ac.ebi.chebi.webapps.chebiWS.model.LiteEntity
 import uk.ac.ebi.chebi.webapps.chebiWS.model.SearchCategory
 import uk.ac.ebi.chebi.webapps.chebiWS.model.StarsCategory
 import uk.ac.ebi.chebi.webapps.chebiWS.model.RelationshipType
+
+import nl.nmc.dbxp.chemistry.ResourceService
 
 /**
  * A Grails Service to provide easy access to the Chebi Database
@@ -13,9 +16,14 @@ import uk.ac.ebi.chebi.webapps.chebiWS.model.RelationshipType
  * @author	Michael van Vliet
  * @email	m.s.vanvliet@lacdr.leidenuniv.nl
  */
-class ChebiService {
+class ChebiService extends ResourceService {
 
 	static transactional = true
+
+	/**
+	 * Defines class used in BridgeDB to be able to look for identical resource keys
+	 */
+	String bridgeDbClass = 'Chebi'
 
 	/**
 	 * @param chebiId e.g 17634
