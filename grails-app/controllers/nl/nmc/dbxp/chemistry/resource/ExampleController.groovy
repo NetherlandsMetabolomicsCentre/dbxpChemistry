@@ -14,6 +14,9 @@ class ExampleController {
 	def CasService
 	def KnapsackService
 	def BridgeDbService
+	
+	
+	def localPath = (ApplicationHolder.getApplication().getParentContext().getResource("/").getFile().toString()).replace('/web-app','')
 
 	def chebi = {
 		render ChebiService.findAllChebiByLabel('glucose' as String, ['max':3,'synonyms':true,'ontologychildren':true,'ontologyparents':true,'ontologychildreninpath':true])
@@ -48,7 +51,7 @@ class ExampleController {
 
 	def chemspider = {
 
-		render "Identical Resource Identifiers :: <p>${	ChemspiderService.identicalResourceKeys('CHEMSPIDER:0001')	}</p>"
+		render "Identical Resource Identifiers :: <p>${	ChemspiderService.identicalResourceKeys('CHEMSPIDER:0001', ChemspiderService.getBridgeDbClass(), "idmapper-text:file://${localPath}/dbs/metabolites.txt")	}</p>"
 
 		try {
 
@@ -74,13 +77,13 @@ class ExampleController {
 	def pubchem = {
 
 		render PubchemService.pubchemSearchPageByInchiKey('IKGXIBQEEMLURG-NVPNHPEKSA-N')
-		render PubchemService.identicalResourceKeys('PC:0001')
+		render PubchemService.identicalResourceKeys('PC:0001', null, "idmapper-text:file://${localPath}/dbs/metabolites.txt")
 	}
 
 	def lipidmaps = {
 
 		//returns URL of LipidMaps page
-		render LipidmapsService.lipidmapsUrlByLMID('LIPIDMAPS:0001')
+		render LipidmapsService.lipidmapsUrlByLMID('LMSP03010003')
 
 		//returns MOL data of Lipid
 		render LipidmapsService.lipidmapsMOLDataByLMID('LMSP03010003')
@@ -88,25 +91,26 @@ class ExampleController {
 
 	def hmdb = {
 		render HmdbService.hmdbUrlByHmdbId('HMDB00122')
-		render HmdbService.identicalResourceKeys('HMDB:0001')
+		render HmdbService.identicalResourceKeys('HMDB00122', null, "idmapper-text:file://${localPath}/dbs/metabolites.txt")
+		render HmdbService.identicalResourceKeys('HMDB:0001', null, "idmapper-text:file://${localPath}/dbs/metabolites.txt")
 	}
 
 	def kegg = {
 		render KeggService.keggUrlByKeggId('C00031')
-		render KeggService.identicalResourceKeys('KEGG:0001')
+		render KeggService.identicalResourceKeys('KEGG:0001', null, "idmapper-text:file://${localPath}/dbs/metabolites.txt")
+		render KeggService.identicalResourceKeys('C00031', null, "idmapper-text:file://${localPath}/dbs/metabolites.txt")
+		
 	}
 
 	def cas = {
-		render CasService.identicalResourceKeys('CAS:0001')
+		render CasService.identicalResourceKeys('CAS:0001', null, "idmapper-text:file://${localPath}/dbs/metabolites.txt")
 	}
 
 	def knapsack = {
-		render KnapsackService.identicalResourceKeys('KNAPSACK:0001')
+		render KnapsackService.identicalResourceKeys('KNAPSACK:0001', null, "idmapper-text:file://${localPath}/dbs/metabolites.txt")
 	}
 
 	def bridgedb = {
-
-		def localPath = (ApplicationHolder.getApplication().getParentContext().getResource("/").getFile().toString()).replace('/web-app','')
 
 		render "<br />Local txt file 'metabolites.txt'<br />" +
 				BridgeDbService.identicalResourceKeys(

@@ -16,7 +16,7 @@ class HmdbService extends ResourceService {
 	/**
 	* Defines class used in BridgeDB to be able to look for identical resource keys
 	*/
-   String bridgeDbClass = 'HMDB'
+   String bridgeDbClass = 'Hmdb'
 
 	/**
 	 * @param	hmdbId (e.g. HMDB00122)
