@@ -104,6 +104,7 @@ class ExampleController {
 
 	def cas = {
 		render CasService.identicalResourceKeys('CAS:0001', null, "idmapper-text:file://${localPath}/dbs/metabolites.txt")
+		render CasService.chemindexUrlByCasId('103608-47-5')
 	}
 
 	def knapsack = {

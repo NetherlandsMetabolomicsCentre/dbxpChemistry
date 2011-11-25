@@ -16,5 +16,13 @@ class CasService extends ResourceService {
 	/**
 	* Defines class used in BridgeDB to be able to look for identical resource keys
 	*/
-   String bridgeDbClass = 'CAS'
+   String bridgeDbClass = 'Cas'
+   
+   /**
+   * @param casId e.g 103608-47-5
+   * @return http://www.chemindex.com/103608-47-5-cas.html
+   */
+  String chemindexUrlByCasId(String casId = '') {
+	  return ('http://www.chemindex.com/' + casId + '-cas.html') as String
+  }
 }
