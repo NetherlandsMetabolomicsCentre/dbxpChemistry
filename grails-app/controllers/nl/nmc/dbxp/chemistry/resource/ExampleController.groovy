@@ -109,6 +109,8 @@ class ExampleController {
 
 	def knapsack = {
 		render KnapsackService.identicalResourceKeys('KNAPSACK:0001', null, "idmapper-text:file://${localPath}/dbs/metabolites.txt")
+		render KnapsackService.knapsackUrlByKnapsackId('C00022830')
+		render KnapsackService.knapsackSearchUrlByWord('Lycopene')
 	}
 
 	def bridgedb = {
