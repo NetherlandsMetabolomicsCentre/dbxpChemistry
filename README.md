@@ -1,0 +1,4 @@
+dbxpChemistry
+=============
+
+Grails chemistry plugin
