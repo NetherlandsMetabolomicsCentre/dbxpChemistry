@@ -1,6 +1,6 @@
 class DbxpChemistryGrailsPlugin {
     // the plugin version
-    def version = "0.1.2"
+    def version = "0.2.0"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.3.7 > *"
     // the other plugins this plugin depends on
@@ -10,6 +10,7 @@ class DbxpChemistryGrailsPlugin {
             "grails-app/views/error.gsp",
 			"grails-app/views/index.gsp",
 			"grails-app/controllers/ExampleController.groovy",
+			"grails-app/conf/DataSource.groovy",
 			"target/pom.xml",
 			"target/pom.xml.sha1",
 			"target/stacktrace.log",
@@ -23,7 +24,14 @@ class DbxpChemistryGrailsPlugin {
     def description = '''Tools for Chemistry'''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/dbxp-chemistry"
+    def documentation = "https://github.com/NetherlandsMetabolomicsCentre/dbxpChemistry"
+	def license = "GPL3"
+	def issueManagement = [system: "github", url: "https://github.com/NetherlandsMetabolomicsCentre/dbxpChemistry/issues"]
+	def scm = [url: "https://github.com/NetherlandsMetabolomicsCentre/dbxpChemistry"]
+	def organization = [ name: "Netherlands Metabolomics Centre", url: "http://www.metabolomicscentre.nl/" ]
+	def developers = [
+			[ name: "Michael van Vliet", email: "m.s.vanvliet@lacdr.leidenuniv.nl" ]
+	]
 
     def doWithWebDescriptor = { xml ->
         // TODO Implement additions to web.xml (optional), this event occurs before 
