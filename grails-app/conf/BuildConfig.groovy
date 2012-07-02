@@ -9,23 +9,27 @@ grails.project.dependency.resolution = {
         // excludes 'ehcache'
     }
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
-    repositories {
-        grailsPlugins()
-        grailsHome()
+	repositories {
         grailsCentral()
+        grailsRepo "http://grails.org/plugins"
 
-        // uncomment the below to enable remote dependency resolution
-        // from public Maven repositories
-        //mavenLocal()
-        //mavenCentral()
-        //mavenRepo "http://snapshots.repository.codehaus.org"
-        //mavenRepo "http://repository.codehaus.org"
-        //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenCentral()
+        mavenRepo "http://nexus.nmcdsp.org/content/repositories/releases"
+        mavenRepo "http://repository.springsource.com/maven/bundles/release"
+        mavenRepo "http://repository.springsource.com/maven/bundles/external"
+        mavenRepo "http://repository.springsource.com/maven/libraries/release"
+        mavenRepo "http://repository.springsource.com/maven/libraries/external"
     }
+	plugins {
+		build( ":tomcat:$grailsVersion",
+				":release:latest.release",
+                ":rest-client-builder:latest.release"
+		) {
+			// plugin only plugin, should not be transitive to the application
+			export = false
+		}
+	}
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-
-        // runtime 'mysql:mysql-connector-java:5.1.13'
     }
 }
